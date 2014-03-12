@@ -1,4 +1,3 @@
-
 ## appspired.com
 server {
 	listen 80;
@@ -15,6 +14,22 @@ server {
        }
 
 }
+
+## appchirp.com
+server {
+	listen 80;
+	server_name appchirp.com www.appchirp.com *.appchirp.com;
+        passenger_enabled on;
+        rails_env    production;
+        root         /www/sites/appchirp.com;
+
+        # redirect server error pages to the static page /50x.html
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+}
+
 
 ## huntit.com.au
 server {

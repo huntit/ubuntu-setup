@@ -1,9 +1,8 @@
 #!/bin/bash 
 # base-setup.sh
-# Script for base setup of a Ubuntu 12.04 LTS server with:
-# git
+# Script for base setup of a Ubuntu 14.04 LTS server with:
 # ufw firewall with ports allowed
-# ssh server on port 222
+# ssh server on port 222, root login disabled
 
 # Output to a LOG file, as well as the console
 exec > >(tee base-setup.log)
@@ -12,8 +11,7 @@ echo "*** Running base-setup.sh at $(date) ***"
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-echo "*** Installing git..."
-sudo apt-get -y install git
+echo "*** Configuring git..."
 # Set the credential cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
 
@@ -24,8 +22,7 @@ yes | sudo ufw reset --force
 sudo ufw allow 222 
 sudo ufw allow http 
 sudo ufw allow 443
-sudo ufw allow 5900
-sudo ufw allow 5901
+sudo ufw allow 10000
 yes | sudo ufw enable
 yes | sudo ufw status verbose
 
@@ -40,6 +37,19 @@ echo "*** Contents of sshd_config ..."
 sudo cat /etc/ssh/sshd_config
 sudo restart ssh
 
+# Installing tools
+echo "*** Installing tools (nano, joe, mc) ..."
+sudo apt-get -y install nano
+sudo apt-get -y install joe
+sudo apt-get -y install mc
+
+#Installing webmin
+echo "*** Installing webmin ..."
+# Add the webmin repository
+sudo sh -c "echo 'deb http://download.webmin.com/download/repository sarge contrib' >> /etc/apt/sources.list"
+wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install webmin
 
 echo "*** base-setup.sh finished at $(date) ***"
 

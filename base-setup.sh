@@ -49,7 +49,7 @@ echo "*** Installing webmin ..."
 sudo sh -c "echo 'deb http://download.webmin.com/download/repository sarge contrib' >> /etc/apt/sources.list"
 wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install webmin
+sudo apt-get -y install webmin
 
 echo "*** base-setup.sh finished at $(date) ***"
 

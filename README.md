@@ -22,8 +22,14 @@ visudo
 
 #lamp-setup.sh
 * apache
+* php
 * mysql
 
+#get-versions.sh
+* Returns installed version numbers of:
+php
+apache
+mysql
 
 #rails-setup.sh
 * PHP for nginx

@@ -10,9 +10,9 @@ sudo apt-get -y update
 sudo apt-get -y install apache2
 
 echo "*** Installing php..."
-sudo apt-get install php5 php5-mysql php5-gd php5-mcrypt php-pear
+sudo apt-get -y install php5 php5-mysql php5-gd php5-mcrypt php-pear
 
 echo "*** Installing mysql..."
-sudo apt-get install mysql-server
+sudo apt-get -y install mysql-server
 sudo mysql_install_db
 sudo mysql_secure_installation

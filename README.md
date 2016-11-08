@@ -18,7 +18,12 @@ visudo
 * ufw firewall (allowed ports: 80, 222, 443, 10000)
 * ssh server on port 222 (root login disabled)
 * nano, joe, mc
-* webmin
+
+#webmin-setup.sh
+* webmin web console
+
+#virtualmin-setup.sh
+* Virtualmin LAMP stack + hosting console
 
 #lamp-setup.sh
 * apache

@@ -43,14 +43,6 @@ sudo apt-get -y install nano
 sudo apt-get -y install joe
 sudo apt-get -y install mc
 
-#Installing webmin
-echo "*** Installing webmin ..."
-# Add the webmin repository
-sudo sh -c "echo 'deb http://download.webmin.com/download/repository sarge contrib' >> /etc/apt/sources.list"
-wget -q http://www.webmin.com/jcameron-key.asc -O- | sudo apt-key add -
-sudo apt-get update
-sudo apt-get -y install webmin
-
 echo "*** base-setup.sh finished at $(date) ***"
 
 read -p "*** Setup script finished. Press Enter to continue ***"

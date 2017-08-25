@@ -1,10 +1,14 @@
 #!/bin/bash 
 # get-versions.sh
-# Script to get the versions of installed software on Ubuntu 14.04 server
+# Script to get the versions of installed software on Ubuntu 14.04/16.04 server
 # Output to a LOG file, as well as the console
 
 exec > >(tee get-versions.log)
 echo "*** Running get-versions.sh at $(date) ***"
+
+echo "***"
+echo "*** Getting Ubuntu version..."
+lsb_release -a
 
 echo "***"
 echo "*** Getting PHP version..."

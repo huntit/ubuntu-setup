@@ -1,6 +1,6 @@
 #!/bin/bash 
 # webmin-setup.sh
-# Script for the setup of Webmin control panel on a Ubuntu 14.04 LTS server
+# Script for the setup of Webmin control panel on a Ubuntu 14.04/16.04 LTS server
 
 #Installing webmin
 echo "*** Installing webmin ..."

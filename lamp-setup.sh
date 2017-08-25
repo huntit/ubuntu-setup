@@ -1,9 +1,9 @@
 #!/bin/bash 
 # lamp-setup.sh
-# Script for the setup of a LAMP stack on a Ubuntu 14.04 LTS server with:
+# Script for the setup of a LAMP stack on a Ubuntu 14.04/16.04 LTS server with:
 # apache2
 # php
-# 
+# mysql
 
 echo "*** Installing apache..."
 sudo apt-get -y update

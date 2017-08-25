@@ -21,14 +21,12 @@ sudo ./base-setup.sh
 
 # webmin-setup.sh
 * webmin web console
+* After install, login to https://your_server_ip:10000 and update packages
 
 # virtualmin-setup.sh
-* Virtualmin LAMP stack + hosting console
-
-# lamp-setup.sh
-* apache
-* php
-* mysql
+* Virtualmin LAMP stack (Apache, MySQL, PHP, BIND, Postfix, DoveCot, etc) + hosting console
+* Allow port TCP 21 for FTP
+* After install, login to https://your_server_ip:10000 and run through setup wizard
 
 # get-versions.sh
 * Returns installed version numbers of:
@@ -36,6 +34,14 @@ Ubuntu
 php
 apache
 mysql
+
+
+## Other Scripts
+
+# lamp-setup.sh
+* apache
+* php
+* mysql
 
 # rails-setup.sh
 * PHP for nginx

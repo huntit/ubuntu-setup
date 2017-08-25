@@ -32,6 +32,7 @@ sudo ./base-setup.sh
 
 # get-versions.sh
 * Returns installed version numbers of:
+Ubuntu
 php
 apache
 mysql

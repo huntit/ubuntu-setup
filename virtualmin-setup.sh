@@ -1,6 +1,6 @@
 #!/bin/bash 
 # virtualmin-setup.sh
-# Script for the setup of a LAMP stack with Virtualmin hosting on a Ubuntu 14.04 LTS server
+# Script for the setup of a LAMP stack with Virtualmin hosting on a Ubuntu 14.04/16.04 LTS server
 
 #Installing Virtualmin (Apache, BIND, Postfix, procmail, SpamAssassin, ClamAV, Dovecot, ProFTPd, MySQL, PostgreSQL, Mailman)
 #Allow ftp through firewall

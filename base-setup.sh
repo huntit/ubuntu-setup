@@ -25,6 +25,7 @@ sudo ufw allow 443
 sudo ufw allow 10000
 yes | sudo ufw enable
 yes | sudo ufw status verbose
+sudo systemctl enable ufw
 
 # Install ssh to port 222
 echo "*** Installing ssh ..."

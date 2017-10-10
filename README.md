@@ -5,8 +5,8 @@ Pre-requisites:
 sudo apt-get -y install git
 
 * new user with sudo rights:
-adduser example_user
-adduser example_user sudo
+- adduser example_user
+- adduser example_user sudo
 
 # Clone repo:
 git clone https://github.com/huntit/ubuntu-setup.git

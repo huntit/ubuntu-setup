@@ -15,6 +15,15 @@ echo "*** Configuring git..."
 # Set the credential cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
 
+# Clear out any existing itables firewall rules
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -F
+sudo iptables -X
+
 # Enable ufw firewall and allow ports 222, 80, 443, 10000, 21
 echo "*** Enabling firewall and setting rules ..."
 # reset all firewall rules to default deny all incoming

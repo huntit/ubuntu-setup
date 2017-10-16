@@ -15,7 +15,7 @@ echo "*** Configuring git..."
 # Set the credential cache to timeout after 1 hour (setting is in seconds)
 git config --global credential.helper 'cache --timeout=3600'
 
-# Enable ufw firewall and allow ports 222, 80, 443
+# Enable ufw firewall and allow ports 222, 80, 443, 10000, 21
 echo "*** Enabling firewall and setting rules ..."
 # reset all firewall rules to default deny all incoming
 yes | sudo ufw reset --force
@@ -23,6 +23,9 @@ sudo ufw allow 222
 sudo ufw allow http 
 sudo ufw allow 443
 sudo ufw allow 10000
+# FTPS ports:
+sudo ufw allow 21/tcp
+sudo ufw allow 59000:59999/tcp
 yes | sudo ufw enable
 yes | sudo ufw status verbose
 sudo systemctl enable ufw

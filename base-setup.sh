@@ -1,6 +1,6 @@
 #!/bin/bash 
 # base-setup.sh
-# Script for base setup of a Ubuntu 14.04/16.04 LTS server with:
+# Script for base setup of a Ubuntu 14.04/16.04/18.04 LTS server with:
 # ufw firewall with ports allowed
 # ssh server on port 222, root login disabled
 

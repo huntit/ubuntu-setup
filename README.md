@@ -1,4 +1,4 @@
-# Standard server config scripts for Ubuntu 14.04/16.04 LTS server
+# Standard server config scripts for Ubuntu 14.04/16.04/18.04 LTS server
 
 Pre-requisites:
 * git:

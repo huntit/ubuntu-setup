@@ -11,5 +11,5 @@ sudo apt-get update
 sudo apt-get -y install webmin
 
 # Install the Lets Encrypt SSL Client
-sudo apt-get install python-letsencrypt-apache
-
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt install python-certbot-apache

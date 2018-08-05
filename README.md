@@ -28,7 +28,10 @@ sudo ./base-setup.sh
 # virtualmin-setup.sh
 * Virtualmin LAMP stack (Apache, MySQL, PHP, BIND, Postfix, DoveCot, etc) + hosting console
 * Allow port TCP 21 for FTP
-* After install, login to https://your_server_ip:10000 and run through setup wizard
+
+After install, login to https://your_server_ip:10000 and run through setup wizard
+* Disabled FirewallD on boot, and enable ufw
+* Set passive port range for ProFTPD to 59000-59999
 
 # get-versions.sh
 * Returns installed version numbers of:

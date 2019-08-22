@@ -1,12 +1,30 @@
 # Standard server config scripts for Ubuntu 14.04/16.04/18.04 LTS server
 
+# Login to console
+
 Pre-requisites:
 * git (if not already installed):
 ```bash
 sudo apt-get -y install git
 ```
 
-* new user with sudo rights:
+* Set the hostname:
+```bash
+hostnamectl set-hostname discovery
+```
+
+* Set the timezone:
+```bash
+sudo dpkg-reconfigure tzdata
+```
+
+* Edit hosts file and add FQDN and hostname for external IP address:
+```bash
+sudo nano /etc/hosts
+203.0.113.10 hostname.example.com hostname
+```
+
+* Add new user with sudo rights:
 ```bash
 adduser example_user
 adduser example_user sudo
@@ -27,7 +45,7 @@ sudo ./base-setup.sh
 * ssh server on port 222 (root login disabled)
 * nano, joe, mc
 
-# Now can login using:
+# Now can login via SSH using:
 ```bash
 ssh -p 222 username@servername.com
 ```
@@ -47,6 +65,25 @@ scp -P 222 ~/.ssh/id_rsa.pub user@servername.com:~/.ssh/authorized_keys
 ```bash
 sudo chmod -R 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 ```
+
+* Change sshd to disallow password authentication:
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+* Change PasswordAuthentication to no to disable tunnelled clear text passwords
+```
+PasswordAuthentication no
+```
+
+* Restart SSHD:
+```bash
+sudo service sshd restart
+```
+# Enable Unattended Security Updates:
+[Automatic Updates - Ubuntu 18.04 Documentation](https://help.ubuntu.com/lts/serverguide/automatic-updates.html)
+
+[How to setup automatic updates on Ubuntu 18.04](https://libre-software.net/ubuntu-automatic-updates/)
 
 # webmin-setup.sh
 * webmin web console

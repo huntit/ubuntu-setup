@@ -42,8 +42,9 @@ sudo systemctl enable ufw
 # Install ssh to port 222
 echo "*** Installing ssh ..."
 sudo apt-get -y install openssh-server
-# Search and replace sshd_config, look for Port xxx without a # in front and replace with Port 222, set PermitRootLogin to NO
+# Search and replace sshd_config, look for Port xxx and replace with Port 222, set PermitRootLogin to NO
 sudo sed -i 's/Port .*/Port 222/' /etc/ssh/sshd_config
+sudo sed -i 's/#Port 222/Port 222/g' /etc/ssh/sshd_config
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 # To configure ssh: sudo gedit /etc/ssh/sshd_config
 echo "*** Contents of sshd_config ..."

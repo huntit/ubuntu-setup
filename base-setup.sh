@@ -49,7 +49,7 @@ sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 # To configure ssh: sudo gedit /etc/ssh/sshd_config
 echo "*** Contents of sshd_config ..."
 sudo cat /etc/ssh/sshd_config
-sudo restart ssh
+sudo service sshd restart
 
 # Installing tools
 echo "*** Installing tools (nano, joe, mc) ..."

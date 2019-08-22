@@ -2,19 +2,25 @@
 
 Pre-requisites:
 * git (if not already installed):
-`sudo apt-get -y install git`
+```bash
+sudo apt-get -y install git
+```
 
 * new user with sudo rights:
-```
+```bash
 adduser example_user
 adduser example_user sudo
 ```
 
 # Clone repo:
-`git clone https://github.com/huntit/ubuntu-setup.git`
+```bash
+git clone https://github.com/huntit/ubuntu-setup.git
+```
 
 # Run scripts:
-`sudo ./base-setup.sh`
+```bash
+sudo ./base-setup.sh
+```
 
 # base-setup.sh
 * ufw firewall (allowed ports: 80, 222, 443, 10000)
@@ -22,17 +28,25 @@ adduser example_user sudo
 * nano, joe, mc
 
 # Now can login using:
-`ssh -p 222 username@servername.com`
+```bash
+ssh -p 222 username@servername.com
+```
 
 # To switch SSH to using Public Key Auth. only:
 * Make .ssh directory on server:
-`mkdir -p ~/.ssh && sudo chmod -R 700 ~/.ssh/`
+```bash
+mkdir -p ~/.ssh && sudo chmod -R 700 ~/.ssh/
+```
 
 * Copy public key from local Mac:
-`scp -P 222 ~/.ssh/id_rsa.pub user@servername.com:~/.ssh/authorized_keys`
+```bash
+scp -P 222 ~/.ssh/id_rsa.pub user@servername.com:~/.ssh/authorized_keys
+```
 
 * Secure .ssh directory and authorized_keys on server:
-`sudo chmod -R 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys`
+```bash
+sudo chmod -R 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+```
 
 # webmin-setup.sh
 * webmin web console

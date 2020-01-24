@@ -85,6 +85,9 @@ sudo service sshd restart
 
 [How to setup automatic updates on Ubuntu 18.04](https://libre-software.net/ubuntu-automatic-updates/)
 
+# How To Secure Your Server (Linode)
+[How to Secure Your Server](https://www.linode.com/docs/security/securing-your-server/)
+
 # webmin-setup.sh
 * webmin web console
 * After install, login to https://your_server_ip:10000 and update packages

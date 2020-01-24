@@ -93,6 +93,7 @@ sudo service sshd restart
 * After install, login to https://your_server_ip:10000 and update packages
 
 # virtualmin-setup.sh
+* Use ./virtualmin-setup.sh --minimal for a minimal install (without SpamAssassin, ClamAV, etc for lower memory use)
 * Virtualmin LAMP stack (Apache, MySQL, PHP, BIND, Postfix, DoveCot, etc) + hosting console
 * Allow port TCP 21 for FTP
 

@@ -99,7 +99,15 @@ sudo service sshd restart
 
 After install, login to https://your_server_ip:10000 and run through setup wizard
 * Disabled FirewallD on boot, and enable ufw
-* Set passive port range for ProFTPD to 59000-59999
+* Set passive port range for ProFTPD to 59000-59999:
+Servers - ProFTPD Server - Networking Options - PASV Port Range: 59000-59999
+
+* Edit ProFTPD settings to allow FTP over TLS:
+Edit Config Files: /etc/proftpd/conf.d/virtualmin.conf
+TLSRequired on
+TLSOptions AllowClientRenegotiations NoCertRequest NoSessionReuseRequired
+TLSProtocol TLSv1.2
+
 
 # get-versions.sh
 * Returns installed version numbers of:

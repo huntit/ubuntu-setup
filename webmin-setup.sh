@@ -13,3 +13,7 @@ sudo apt-get -y install webmin
 # Install the Lets Encrypt SSL Client
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt install python-certbot-apache
+
+# Ubuntu 20.04 LTS - Install the Lets Encrypt SSL Client
+sudo apt -y install certbot python3-certbot-apache
+

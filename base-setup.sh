@@ -37,6 +37,7 @@ sudo ufw allow 21/tcp
 sudo ufw allow 59000:59999/tcp
 yes | sudo ufw enable
 yes | sudo ufw status verbose
+sudo systemctl disable firewalld
 sudo systemctl enable ufw
 
 # Install ssh to port 222

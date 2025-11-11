@@ -88,14 +88,25 @@ sudo systemctl restart ssh
 # How To Secure Your Server (Linode)
 [How to Secure Your Server](https://www.linode.com/docs/security/securing-your-server/)
 
+
+## Virtualmin
+# virtualmin-setup.sh
+* Use ./virtualmin-setup.sh --minimal for a minimal install (without SpamAssassin, ClamAV, etc for lower memory use)
+* Virtualmin LAMP stack (Apache, MariaDB, PHP, BIND, Postfix, DoveCot, etc) + hosting console
+
+To open new port in FirewallD (Webmin → Networking → FirewallD (eg. port 222)
+* Allow port TCP 21 for FTP
+  
+To disable SpamAssassin and ClamAV to reduce memory usage:
+* Go to Email Settings ⇾ Spam and Virus Scanning page.
+* Disable and stop the services for spam and virus scanning.
+* Go to System Settings ⇾ Features and Plugins.
+* Disable the spam and antivirus features.
+
+
 # webmin-setup.sh
 * webmin web console
 * After install, login to https://your_server_ip:10000 and update packages
-
-# virtualmin-setup.sh
-* Use ./virtualmin-setup.sh --minimal for a minimal install (without SpamAssassin, ClamAV, etc for lower memory use)
-* Virtualmin LAMP stack (Apache, MySQL, PHP, BIND, Postfix, DoveCot, etc) + hosting console
-* Allow port TCP 21 for FTP
 
 After install, login to https://your_server_ip:10000 and run through setup wizard
 * Virtualmin will install and configure firewalld, MariaDB, and other services

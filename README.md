@@ -95,7 +95,8 @@ sudo systemctl restart ssh
 * Virtualmin LAMP stack (Apache, MariaDB, PHP, BIND, Postfix, DoveCot, etc) + hosting console
 
 To open new port in FirewallD (Webmin → Networking → FirewallD (eg. port 222)
-* Allow port TCP 21 for FTP
+* Allow port TCP 222 for SSH
+* Remove port TCP 22 for SSH (default)
   
 To disable SpamAssassin and ClamAV to reduce memory usage:
 * Go to Email Settings ⇾ Spam and Virus Scanning page.
@@ -127,6 +128,14 @@ php
 apache
 mysql
 
+
+## Firewall Scripts
+
+# firewalld-vipre-allow-smtp.sh
+* Configures firewalld to allow incoming SMTP (port 25) only from VIPRE servers
+* Creates an ipset with VIPRE IP ranges and adds a rich rule to accept SMTP connections
+* Note: Remember to block incoming SMTP on the public zone rules first
+* Run with: `sudo ./firewalld-vipre-allow-smtp.sh`
 
 ## Other Scripts
 

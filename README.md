@@ -1,4 +1,4 @@
-# Standard server config scripts for Ubuntu 14.04/16.04/18.04 LTS server
+# Standard server config scripts for Ubuntu 14.04/16.04/18.04/24.04 LTS server
 
 # Login to console
 
@@ -41,9 +41,9 @@ sudo ./base-setup.sh
 ```
 
 # base-setup.sh
-* ufw firewall (allowed ports: 80, 222, 443, 10000)
 * ssh server on port 222 (root login disabled)
 * nano, joe, mc
+* Note: Firewall configuration is handled by Virtualmin (firewalld)
 
 # Now can login via SSH using:
 ```bash
@@ -78,7 +78,7 @@ PasswordAuthentication no
 
 * Restart SSHD:
 ```bash
-sudo service sshd restart
+sudo systemctl restart ssh
 ```
 # Enable Unattended Security Updates:
 [Automatic Updates - Ubuntu 18.04 Documentation](https://help.ubuntu.com/lts/serverguide/automatic-updates.html)
@@ -98,7 +98,7 @@ sudo service sshd restart
 * Allow port TCP 21 for FTP
 
 After install, login to https://your_server_ip:10000 and run through setup wizard
-* Disabled FirewallD on boot, and enable ufw
+* Virtualmin will install and configure firewalld, MariaDB, and other services
 * Set passive port range for ProFTPD to 59000-59999:
 Servers - ProFTPD Server - Networking Options - PASV Port Range: 59000-59999
 
